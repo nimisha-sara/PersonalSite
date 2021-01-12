@@ -10,7 +10,7 @@ grocery_item = {}
 grocery_history = [] 
 
 stop = False 
-print("Follow the instructions to make your grocery list")
+
 while not stop:
     item_name = input("Item name:\n")   
     quantity = input("Quantity purchased:\n")   
@@ -22,12 +22,11 @@ while not stop:
       stop = True
     
 grand_total = 0  
-
+print("\nGROCERY LIST!!\n")
 for index, item in enumerate(grocery_history):
-    print("GROCERY LIST\n")
     item_total = item['number'] * item['price']
     grand_total = grand_total + item_total
-    print('%d %s  %.2f %.2f' % (item['number'], item['name'], item['price'], item_total))
+    print('%d %s  @ ₹%.2f  ₹%.2f' % (item['number'], item['name'], item['price'], item_total))
     item_total = 0
 
-print('\nGrand total: %.2f' % grand_total)
+print('\nGrand total: ₹%.2f' % grand_total)
